@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice roll - History</title>
+
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicoon.png}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap-icons/1.11.1/font/bootstrap-icons.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <script th:src="@{/js/index.js}" defer></script>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}" defer></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand fixed-top shadow-sm">
+    <div class="container-fluid">
+        <div class="navbar-nav">
+            <a class="nav-link" th:href="@{/}">Home</a>
+            <a class="nav-link" th:href="@{/history}">History</a>
+        </div>
+    </div>
+</nav>
+
+<div class="mt-5">
+    <div class="container min-vh-100 d-flex flex-column align-items-center justify-content-center ">
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Rolled number</th>
+                <th scope="col">Submitted at</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="roll : ${rolls}">
+                <td th:text="${roll.id}"></td>
+                <td th:text="${roll.name}"></td>
+                <td class="rolled-number" th:text="${roll.rolledNumber}"></td>
+                <td th:text="${roll.submittedAt}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+name: lucy-poplawska-202-infrastructure-project
+services:
+
+  lp-nginx:
+    image: nginx:latest
+    container_name: revproxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/selfsigned:/etc/nginx/selfsigned
+      - ./nginx/revproxy.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - lp-net
+    depends_on:
+      lp-app1:
+        condition: service_started
+      lp-app2:
+        condition: service_started
+
+  lp-app1:
+    build:
+      context: ./springboot-app
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://lp-db:5432/${DB_NAME}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    depends_on:
+      - lp-db
+    networks:
+      - lp-net
+
+  lp-app2:
+    build:
+      context: ./static-site
+      dockerfile: Dockerfile
+    networks:
+      - lp-net
+
+  lp-db:
+    image: postgres:17.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - lp-db-data:/var/lib/postgresql/data
+    networks:
+      - lp-net
+
+volumes:
+  lp-db-data:
+
+networks:
+  lp-net:
+    driver: bridge
