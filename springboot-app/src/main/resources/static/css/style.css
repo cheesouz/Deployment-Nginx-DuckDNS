@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Press_Start_2P';
+    src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: 'Press_Start_2P';
+    background-color: #FFAD60;
+    color: #60111c;
+}
+
+p {
+    color: #A02334;
+}
+
+span {
+    color: #A02334;
+}
+
+.text-input {
+    background-color: #FFEEAD;
+    margin: 10px;
+    border: 0;
+    padding: 5px 20px 5px 20px;
+    color: #60111c;
+    box-shadow: 0px 5px #60111c, 0px -5px #60111c, 5px 0px #60111c, -5px 0px #60111c, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36 ;
+}
+
+.text-input:focus {
+    outline: transparent;
+}
+
+.button {
+    color: #FFEEAD;
+    text-decoration: none;
+    background-color: #96CEB4;
+    padding: 30px 80px 30px 80px;
+    margin: 10px;
+    font-size: 14px;
+    font-family: 'Press Start 2P';
+    border: 0;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36 ;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(5px);
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px #00000038;
+}
+
+table.table thead tr th {
+    color: #FFEEAD !important;
+    background-color: #A02334 !important;
+}
+
+table.table tbody tr td {
+    color: #A02334 !important;
+    background-color: #FFEEAD !important;
+}
+
+table.table tbody tr td.rolled-number {
+    color: #96CEB4 !important;
+}
+
+table.table {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,inset 0px 5px black;
+}
+
+table.table th,
+table.table td {
+    border: 2px solid #60111c;
+    padding: 10px;
+}
+
+
+.navbar {
+    background-color: #A02334;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    box-shadow: none !important;
+}
+
+.nav-link {
+    /* Pixel-style border */
+    border: 2px solid black;
+    padding: 6px 12px;
+    color: #FFEEAD;
+    box-shadow: 2px 2px 0 black;
+    text-align: center;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    background-color: #FFAD60;
+    color: #60111c !important;
+    text-decoration: none;
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+.navbar-nav .nav-link + .nav-link {
+    margin-left: 12px;
+}
+
