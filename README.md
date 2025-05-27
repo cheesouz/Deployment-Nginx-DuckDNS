@@ -8,7 +8,7 @@ otherwise this container cannot properly!!
 
 ```shell
 cd generate_ssl
-docker-compose --env-file ../.env up -d
+docker compose --env-file ../.env up
 ```
 
 Wait for the container to successfully exit. This indicates that the certificates have been generated.
@@ -18,7 +18,7 @@ After the certificate generation is complete, run the main application:
 
 ```shell
 cd ..
-docker-compose up -d
+docker compose up
 ```
 
 ### 3. Accessing the Applications

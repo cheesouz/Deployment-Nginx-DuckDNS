@@ -18,4 +18,4 @@ ENTRYPOINT ["/bin/sh", "-c", "\
     --authenticator dns-duckdns \
     --dns-duckdns-credentials /etc/letsencrypt/duckdns.ini \
     --dns-duckdns-propagation-seconds 120 \
-    -d ${SUBDOMAIN}"]
+    -d ${SUBDOMAIN}.duckdns.org"]
