@@ -5,8 +5,7 @@ services:
     build: .
     container_name: certbot
     environment:
-      - SUBDOMAIN=${SUBDOMAIN}
-      - DUCKDNS_TOKEN=${TOKEN}
+      - DUCKDNS_TOKEN=0bb0ed28-ab3a-47d4-abe6-fe39c049f88e
     volumes:
       - ../certs:/etc/letsencrypt
 volumes:

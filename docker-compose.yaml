@@ -8,8 +8,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./certs/archive/lpoplawska.duckdns.org/fullchain1.pem:/etc/nginx/ssl/fullchain.pem
-      - ./certs/archive/lpoplawska.duckdns.org/privkey1.pem:/etc/nginx/ssl/privkey.pem
+      - ./certs/archive/poplawska-lucy.duckdns.org/fullchain1.pem:/etc/nginx/ssl/fullchain.pem
+      - ./certs/archive/poplawska-lucy.duckdns.org/privkey1.pem:/etc/nginx/ssl/privkey.pem
       - ./nginx/revproxy.conf:/etc/nginx/conf.d/default.conf:ro
     networks:
       - lp-net
