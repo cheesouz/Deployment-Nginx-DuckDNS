@@ -3,11 +3,12 @@
 
 ## Run instructions
 ### 1. SSL Certificate Generation
-First, run the certbot container to obtain the SSL certificate:
+First, run the certbot container to obtain the SSL certificate. Using **--env-file ../.env** is crucial, 
+otherwise this container cannot properly!!
 
 ```shell
 cd generate_ssl
-docker-compose up --build
+docker-compose --env-file ../.env up -d
 ```
 
 Wait for the container to successfully exit. This indicates that the certificates have been generated.
@@ -20,7 +21,7 @@ cd ..
 docker-compose up -d
 ```
 
-## 3. Accessing the Applications
+### 3. Accessing the Applications
 Once the containers are running, you can access:
 
 - Spring Boot application: https://lpoplawska.duckdns.org/app1/

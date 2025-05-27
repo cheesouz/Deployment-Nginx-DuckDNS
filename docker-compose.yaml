@@ -53,9 +53,6 @@ services:
 
 volumes:
   lp-db-data:
-  certbot-etc:
-  certbot-var:
-  webroot:
 
 networks:
   lp-net:
