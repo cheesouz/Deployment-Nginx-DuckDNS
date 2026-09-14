@@ -1,5 +1,5 @@
-## Infrastructure 3 Project
-### Lucy Poplawska ACS202
+## Infrastructure 3 Project - Lucy Poplawska ACS202
+College assignment for experimentaion with Docker, SSL Certification, Reverse Proxy using nginx. 
 
 ## Run instructions
 ### 1. SSL Certificate Generation
